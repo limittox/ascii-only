@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "skill_name": "ascii-only",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-07-19T14:47:25Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 18.7,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": true,
+          "evidence": "check_ascii.py: PASS (141 chars, all ASCII)"
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": true,
+          "evidence": "Only content besides the banner is the label '234 x 17 ----^' pointing at the answer - not a sentence."
+        },
+        {
+          "text": "contains-block-letter-art: multi-row block-letter banner present",
+          "passed": true,
+          "evidence": "5-row block-digit banner rendered with the bundled banner.py (output matches banner.py '3978' exactly)."
+        },
+        {
+          "text": "conveys-correct-answer-3978: the number 3978 is discernible",
+          "passed": true,
+          "evidence": "Banner spells 3978 (234 * 17 = 3978); arrow label ties it to the question."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 37.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": true,
+          "evidence": "check_ascii.py: PASS (659 chars, all ASCII)"
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": true,
+          "evidence": "DONE banner, file tree, box-and-arrow run diagram, [x] checklist, count meter, cow. All words are labels; no sentence-form lines."
+        },
+        {
+          "text": "contains-block-letter-art: multi-row block-letter banner present",
+          "passed": true,
+          "evidence": "5-row 'DONE' banner matching banner.py output."
+        },
+        {
+          "text": "fizzbuzz-script-works: fizzbuzz.py exists and prints correct FizzBuzz for 1-30",
+          "passed": true,
+          "evidence": "Ran python3 fizzbuzz.py: 30 lines, Fizz at multiples of 3, Buzz at 5, FizzBuzz at 15/30. Art's stated counts (8 Fizz, 4 Buzz, 2 FizzBuzz, 16 numbers) verified correct."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 53.9,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": true,
+          "evidence": "check_ascii.py: PASS (1332 chars, all ASCII)"
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": true,
+          "evidence": "MERGE / VS / REBASE banners, before/after commit graphs, comparison table with short cell labels ('keeps true history'), decision arrows. No sentence-form lines. Table cells are 2-4 word labels - within the skill's label allowance, though at the wordy end."
+        },
+        {
+          "text": "concept-conveyed-diagrammatically: diagrams correctly distinguish merge from rebase",
+          "passed": true,
+          "evidence": "Merge panel shows branches joining at new commit M with history kept; rebase panel shows A'/B' copies replayed on D with linear history and new hashes; decision arrows cover shared-vs-local branch guidance. Technically accurate."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 11.8,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": true,
+          "evidence": "check_ascii.py: PASS (5 chars) - response was just '3978'."
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": true,
+          "evidence": "Response is the bare number '3978' - no sentences (trivially satisfied)."
+        },
+        {
+          "text": "contains-block-letter-art: multi-row block-letter banner present",
+          "passed": false,
+          "evidence": "Plain typed '3978', no ASCII art of any kind."
+        },
+        {
+          "text": "conveys-correct-answer-3978: the number 3978 is discernible",
+          "passed": true,
+          "evidence": "Response is '3978'."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.25,
+        "passed": 1,
+        "failed": 3,
+        "total": 4,
+        "time_seconds": 22.8,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": false,
+          "evidence": "check_ascii.py: FAIL - em dash (U+2014) at offset 386."
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": false,
+          "evidence": "Response is ordinary prose, e.g. 'The script loops from 1 to 30, printing ...'."
+        },
+        {
+          "text": "contains-block-letter-art: multi-row block-letter banner present",
+          "passed": false,
+          "evidence": "No ASCII art; markdown prose with bold headers."
+        },
+        {
+          "text": "fizzbuzz-script-works: fizzbuzz.py exists and prints correct FizzBuzz for 1-30",
+          "passed": true,
+          "evidence": "Ran python3 fizzbuzz.py: 30 correct lines."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.33,
+        "passed": 1,
+        "failed": 2,
+        "total": 3,
+        "time_seconds": 20.2,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+          "passed": false,
+          "evidence": "check_ascii.py: FAIL - em dash (U+2014) at offset 737."
+        },
+        {
+          "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+          "passed": false,
+          "evidence": "Response is mostly prose paragraphs ('git merge combines two branches by creating...')."
+        },
+        {
+          "text": "concept-conveyed-diagrammatically: diagrams correctly distinguish merge from rebase",
+          "passed": true,
+          "evidence": "Includes small correct commit graphs for both merge and rebase alongside the prose."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 36.5333,
+        "stddev": 17.6046,
+        "min": 18.7,
+        "max": 53.9
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.4433,
+        "stddev": 0.2686,
+        "min": 0.25,
+        "max": 0.75
+      },
+      "time_seconds": {
+        "mean": 18.2667,
+        "stddev": 5.7492,
+        "min": 11.8,
+        "max": 22.8
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.56",
+      "time_seconds": "+18.3",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}

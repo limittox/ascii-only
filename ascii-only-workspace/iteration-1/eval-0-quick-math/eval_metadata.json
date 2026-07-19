@@ -1,0 +1,11 @@
+{
+  "eval_id": 0,
+  "eval_name": "quick-math",
+  "prompt": "whats 234 * 17? just need the number",
+  "assertions": [
+    "response-is-pure-ascii: every character in response.md is printable 7-bit ASCII (codes 32-126), tab, or newline - no unicode, emoji, box-drawing, curly quotes, or em dashes",
+    "no-prose-sentences: no line of the response reads aloud as an ordinary sentence; words appear only as block-letter banners or short labels inside a drawing",
+    "contains-block-letter-art: the response contains a multi-row block-letter banner or equivalent large ASCII rendering (not just a plain typed word)",
+    "conveys-correct-answer-3978: the number 3978 is discernible from the response"
+  ]
+}

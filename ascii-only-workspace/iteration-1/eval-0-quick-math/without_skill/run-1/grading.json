@@ -1,0 +1,36 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": true,
+      "evidence": "check_ascii.py: PASS (5 chars) - response was just '3978'."
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": true,
+      "evidence": "Response is the bare number '3978' - no sentences (trivially satisfied)."
+    },
+    {
+      "text": "contains-block-letter-art: multi-row block-letter banner present",
+      "passed": false,
+      "evidence": "Plain typed '3978', no ASCII art of any kind."
+    },
+    {
+      "text": "conveys-correct-answer-3978: the number 3978 is discernible",
+      "passed": true,
+      "evidence": "Response is '3978'."
+    }
+  ],
+  "summary": {"passed": 3, "failed": 1, "total": 4, "pass_rate": 0.75},
+  "timing": {"executor_duration_seconds": 11.8, "total_duration_seconds": 11.8},
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "no-prose-sentences",
+        "reason": "A terse baseline ('3978') passes this without the skill - on very short answers only the block-letter-art assertion discriminates."
+      }
+    ],
+    "overall": "quick-math is an easy case; the art assertion carries the discrimination."
+  }
+}

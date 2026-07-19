@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": false,
+      "evidence": "check_ascii.py: FAIL - em dash (U+2014) at offset 737."
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": false,
+      "evidence": "Response is mostly prose paragraphs ('git merge combines two branches by creating...')."
+    },
+    {
+      "text": "concept-conveyed-diagrammatically: diagrams correctly distinguish merge from rebase",
+      "passed": true,
+      "evidence": "Includes small correct commit graphs for both merge and rebase alongside the prose."
+    }
+  ],
+  "summary": {"passed": 1, "failed": 2, "total": 3, "pass_rate": 0.33},
+  "timing": {"executor_duration_seconds": 20.2, "total_duration_seconds": 20.2},
+  "claims": [],
+  "eval_feedback": {"suggestions": [], "overall": "Baseline behaves as expected."}
+}

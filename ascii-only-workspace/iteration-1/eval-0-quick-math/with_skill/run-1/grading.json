@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": true,
+      "evidence": "check_ascii.py: PASS (141 chars, all ASCII)"
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": true,
+      "evidence": "Only content besides the banner is the label '234 x 17 ----^' pointing at the answer - not a sentence."
+    },
+    {
+      "text": "contains-block-letter-art: multi-row block-letter banner present",
+      "passed": true,
+      "evidence": "5-row block-digit banner rendered with the bundled banner.py (output matches banner.py '3978' exactly)."
+    },
+    {
+      "text": "conveys-correct-answer-3978: the number 3978 is discernible",
+      "passed": true,
+      "evidence": "Banner spells 3978 (234 * 17 = 3978); arrow label ties it to the question."
+    }
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 18.7, "total_duration_seconds": 18.7},
+  "claims": [],
+  "eval_feedback": {"suggestions": [], "overall": "No suggestions."}
+}

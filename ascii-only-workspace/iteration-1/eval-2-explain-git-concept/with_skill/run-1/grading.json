@@ -1,0 +1,30 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": true,
+      "evidence": "check_ascii.py: PASS (1332 chars, all ASCII)"
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": true,
+      "evidence": "MERGE / VS / REBASE banners, before/after commit graphs, comparison table with short cell labels ('keeps true history'), decision arrows. No sentence-form lines. Table cells are 2-4 word labels - within the skill's label allowance, though at the wordy end."
+    },
+    {
+      "text": "concept-conveyed-diagrammatically: diagrams correctly distinguish merge from rebase",
+      "passed": true,
+      "evidence": "Merge panel shows branches joining at new commit M with history kept; rebase panel shows A'/B' copies replayed on D with linear history and new hashes; decision arrows cover shared-vs-local branch guidance. Technically accurate."
+    }
+  ],
+  "summary": {"passed": 3, "failed": 0, "total": 3, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 53.9, "total_duration_seconds": 53.9},
+  "claims": [
+    {
+      "claim": "Rebase rewrites commits into new hashes; merge preserves history",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Standard git semantics, correctly depicted."
+    }
+  ],
+  "eval_feedback": {"suggestions": [], "overall": "No suggestions."}
+}

@@ -1,0 +1,35 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": true,
+      "evidence": "check_ascii.py: PASS (659 chars, all ASCII)"
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": true,
+      "evidence": "DONE banner, file tree, box-and-arrow run diagram, [x] checklist, count meter, cow. All words are labels; no sentence-form lines."
+    },
+    {
+      "text": "contains-block-letter-art: multi-row block-letter banner present",
+      "passed": true,
+      "evidence": "5-row 'DONE' banner matching banner.py output."
+    },
+    {
+      "text": "fizzbuzz-script-works: fizzbuzz.py exists and prints correct FizzBuzz for 1-30",
+      "passed": true,
+      "evidence": "Ran python3 fizzbuzz.py: 30 lines, Fizz at multiples of 3, Buzz at 5, FizzBuzz at 15/30. Art's stated counts (8 Fizz, 4 Buzz, 2 FizzBuzz, 16 numbers) verified correct."
+    }
+  ],
+  "summary": {"passed": 4, "failed": 0, "total": 4, "pass_rate": 1.0},
+  "timing": {"executor_duration_seconds": 37.0, "total_duration_seconds": 37.0},
+  "claims": [
+    {
+      "claim": "exit 0 and 30/30 lines as drawn in the report",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Re-ran script: exit 0, wc -l = 30."
+    }
+  ],
+  "eval_feedback": {"suggestions": [], "overall": "No suggestions."}
+}

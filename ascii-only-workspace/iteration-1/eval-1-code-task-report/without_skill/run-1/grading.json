@@ -1,0 +1,28 @@
+{
+  "expectations": [
+    {
+      "text": "response-is-pure-ascii: every character is printable 7-bit ASCII, tab, or newline",
+      "passed": false,
+      "evidence": "check_ascii.py: FAIL - em dash (U+2014) at offset 386."
+    },
+    {
+      "text": "no-prose-sentences: words appear only as banners or short diagram labels",
+      "passed": false,
+      "evidence": "Response is ordinary prose, e.g. 'The script loops from 1 to 30, printing ...'."
+    },
+    {
+      "text": "contains-block-letter-art: multi-row block-letter banner present",
+      "passed": false,
+      "evidence": "No ASCII art; markdown prose with bold headers."
+    },
+    {
+      "text": "fizzbuzz-script-works: fizzbuzz.py exists and prints correct FizzBuzz for 1-30",
+      "passed": true,
+      "evidence": "Ran python3 fizzbuzz.py: 30 correct lines."
+    }
+  ],
+  "summary": {"passed": 1, "failed": 3, "total": 4, "pass_rate": 0.25},
+  "timing": {"executor_duration_seconds": 22.8, "total_duration_seconds": 22.8},
+  "claims": [],
+  "eval_feedback": {"suggestions": [], "overall": "Baseline behaves as expected for an unconstrained run."}
+}

@@ -1,0 +1,10 @@
+{
+  "eval_id": 2,
+  "eval_name": "explain-git-concept",
+  "prompt": "can you explain the difference between git merge and git rebase? keep it brief",
+  "assertions": [
+    "response-is-pure-ascii: every character in response.md is printable 7-bit ASCII (codes 32-126), tab, or newline - no unicode, emoji, box-drawing, curly quotes, or em dashes",
+    "no-prose-sentences: no line of the response reads aloud as an ordinary sentence; words appear only as block-letter banners or short labels inside a drawing",
+    "concept-conveyed-diagrammatically: the response uses commit-graph style diagrams that correctly distinguish merge (branches join via a merge commit, history preserved) from rebase (commits replayed on top of the other branch, linear history)"
+  ]
+}

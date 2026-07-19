@@ -1,0 +1,26 @@
+{
+  "skill_name": "ascii-only",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "quick-math",
+      "prompt": "whats 234 * 17? just need the number",
+      "expected_output": "The answer 3978 conveyed as ASCII art (block-letter digits), with no prose and no non-ASCII characters.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "code-task-report",
+      "prompt": "create a python script fizzbuzz.py in the current directory that prints fizzbuzz for 1 to 30, and run it to make sure it works",
+      "expected_output": "fizzbuzz.py created and verified working (normal code in the file), but the report back to the user is pure ASCII art - banner + diagram, no sentences, no non-ASCII characters.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "explain-git-concept",
+      "prompt": "can you explain the difference between git merge and git rebase? keep it brief",
+      "expected_output": "A conceptual explanation delivered entirely as ASCII diagrams (commit graphs, labeled boxes/arrows) with at most banner words and short labels - no prose sentences, no non-ASCII characters.",
+      "files": []
+    }
+  ]
+}

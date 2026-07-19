@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "code-task-report",
+  "prompt": "create a python script fizzbuzz.py in the current directory that prints fizzbuzz for 1 to 30, and run it to make sure it works",
+  "assertions": [
+    "response-is-pure-ascii: every character in response.md is printable 7-bit ASCII (codes 32-126), tab, or newline - no unicode, emoji, box-drawing, curly quotes, or em dashes",
+    "no-prose-sentences: no line of the response reads aloud as an ordinary sentence; words appear only as block-letter banners or short labels inside a drawing",
+    "contains-block-letter-art: the response contains a multi-row block-letter banner or equivalent large ASCII rendering (not just a plain typed word)",
+    "fizzbuzz-script-works: fizzbuzz.py exists in the outputs directory and running it prints correct FizzBuzz output for 1 through 30 (the file itself is normal Python - the ASCII-art constraint applies only to the chat response)"
+  ]
+}
